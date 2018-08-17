@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Other" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/transpant</item>
+        <item name="colorPrimaryDark">@color/transpant</item>
+        <item name="colorAccent">@color/transpant</item>
+        <item name="colorControlActivated">#F79C0E</item>
+    </style>
+
+    <style name="MyProgressBar" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint"
+            tools:targetApi="lollipop">@color/colorYellow</item>
+        <item name="android:minHeight">200dp</item>>
+        <item name="android:minWidth">200dp</item>>
+    </style>
+
+    <style name="MyProgressBarRed" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:indeterminateTintMode" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:minHeight">200dp</item>>
+        <item name="android:minWidth">200dp</item>
+    </style>
+
+
+
+    <style name="myProgressBarRefer" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint" tools:targetApi="lollipop">#fff787</item>
+        <item name="android:indeterminateTintMode" tools:targetApi="lollipop">@color/colorYellow</item>
+        <item name="android:minHeight">200dp</item>>
+        <item name="android:minWidth">200dp</item>
+    </style>
+
+    <style name="mytext" parent="Base.Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:textColor">@color/colorAccent</item>>
+
+    </style>
+
+    <style name="DefaultCustomViewStyle"></style>
+
+</resources>

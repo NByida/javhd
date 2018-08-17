@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="CircleProgressbar">
+        <attr name="radius" format="dimension"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="ringColor" format="color"/>
+        <attr name="textColor" format="color"/>
+    </declare-styleable>
+
+    <attr name="defaultStyle" format="reference"></attr>
+    <attr name="myProgressBaraaa" format="reference"/>
+
+    <style name="myProgressBar2" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:indeterminateTintMode" tools:targetApi="lollipop">@color/colorAccent</item>
+        <item name="android:minHeight">200dp</item>
+        <item name="android:minWidth">200dp</item>
+    </style>
+
+    <style name="defaultStyle" >
+        <item name="radius" >8dp</item>
+        <item name="strokeWidth">8dp</item>
+        <item name="ringColor">@color/colorAccent</item>
+        <item name="textColor">@color/colorAccent</item>
+    </style>
+
+</resources>
+
