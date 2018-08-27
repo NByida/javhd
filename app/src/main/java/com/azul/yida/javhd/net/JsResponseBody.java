@@ -1,11 +1,8 @@
 package com.azul.yida.javhd.net;
 
-import android.util.Log;
-
 import com.azul.yida.javhd.common.Mlog;
 
 import java.io.IOException;
-
 import okhttp3.MediaType;
 import okhttp3.ResponseBody;
 import okio.Buffer;
@@ -54,7 +51,9 @@ public class JsResponseBody extends ResponseBody {
     private Source source(Source source) {
         return new ForwardingSource(source) {
             long totalBytesRead = 0L;
-
+            long time=0l;
+            long speed=0l;
+            long bytesOnePiece=0l;
             @Override
             public long read(Buffer sink, long byteCount) throws IOException {
                 long bytesRead = super.read(sink, byteCount);
@@ -62,13 +61,17 @@ public class JsResponseBody extends ResponseBody {
                 totalBytesRead += bytesRead != -1 ? bytesRead : 0;
                 if (null != downloadListener) {
                     if (bytesRead != -1) {
+                        if(System.currentTimeMillis()-time>=1000){
+                            speed=bytesOnePiece/(System.currentTimeMillis()-time);
+                            bytesOnePiece=0;
+                            time=System.currentTimeMillis();
+                            Mlog.t("speed is"+speed+"kb");
+                        }else bytesOnePiece+=bytesRead != -1 ? bytesRead : 0;
                         downloadListener.onProgress((int) (totalBytesRead * 100 / responseBody.contentLength()));
                     }else downloadListener.onFinishDownload();
-
                 }
                 return bytesRead;
             }
         };
-
     }
 }

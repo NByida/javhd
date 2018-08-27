@@ -2,45 +2,54 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_margin="8dp"
     android:layout_width="match_parent"
     android:layout_gravity="center"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/im_beauty"
-        android:src="@color/colorAccent"
-        android:layout_gravity="center"
-        android:scaleType="centerCrop"
+    <android.support.v7.widget.CardView
+        android:id="@+id/lay_outdoor"
+        style="@style/baseCardView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        />
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/im_beauty"
+            android:src="@color/colorAccent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
 
-        <TextView
-            android:id="@+id/tv_time"
-            android:textColor="@android:color/white"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="发表于2天前" />
+            <TextView
+                android:id="@+id/tv_time"
+                android:textColor="@android:color/white"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="发表于2天前" />
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:textColor="@android:color/holo_purple"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:padding="5dp"
-            android:singleLine="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_time"
-            android:layout_marginTop="5dp"
-            android:layout_centerHorizontal="true"
-            android:text="打野快来中路，对面鲁班没闪对面鲁班没闪对面鲁班没闪" />
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_title"
+                android:textColor="@android:color/holo_purple"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_time"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:text="打野快来中路，对面鲁班没闪对面鲁班没闪对面鲁班没闪" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
 
 </FrameLayout>

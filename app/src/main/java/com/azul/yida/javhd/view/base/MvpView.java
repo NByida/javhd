@@ -40,13 +40,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 
 public abstract class MvpView implements BaseView {
-    //    private BasePresentActivity activity;
     protected View rootView;
     private BaseLoadingFragment loadingFragment;
     private Unbinder unbinder;
     protected LifecycleProvider mLifecycleProvider;
-
-    private long time=0;
     protected ImmersionBar mImmersionBar;
 
 
@@ -83,19 +80,15 @@ public abstract class MvpView implements BaseView {
         if(loadingFragment==null){
             this.loadingFragment=new BaseLoadingFragment();
         }
-        loadingFragment.show(((AppCompatActivity)getActivity()).getSupportFragmentManager(),"");
-        time=System.currentTimeMillis();
+        loadingFragment.show(((AppCompatActivity)getActivity()).getSupportFragmentManager());
     }
 
     @Override
     public void dissmissLoading() {
-        if(time==0) Mlog.e("dissmissLoading called before showLoading");
         if(loadingFragment==null)return;
        if(loadingFragment.getDialog().isShowing()){
            loadingFragment.dismiss();
        }
-
-
     }
 
     @Override

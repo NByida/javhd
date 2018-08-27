@@ -16,6 +16,9 @@ import com.rohitarya.glide.facedetection.transformation.FaceCenterCrop;
 
 import java.util.concurrent.ExecutionException;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class ImgLoader {
     public static final String ANDROID_RESOURCE = "android.resource://";
     public static final String FOREWARD_SLASH = "/";
@@ -42,22 +45,22 @@ public class ImgLoader {
         Glide.with(context).load(url).dontAnimate().centerCrop().into(imageView);
     }
 
-//    public void circle(Context context, String url, ImageView imageView) {
-//        Glide.with(context)
-//                .load(url)
-//                .bitmapTransform(new CropCircleTransformation(context))
-//                .crossFade()
-//                .into(imageView);
-//    }
+    public void circle(Context context, String url, ImageView imageView) {
+        Glide.with(context)
+                .load(url)
+                .bitmapTransform(new CropCircleTransformation(context))
+                .crossFade()
+                .into(imageView);
+    }
 
-//    public void roundedCorners(Context context, String url, ImageView imageView, int corner,
-//                               int margin) {
-//        Glide.with(context)
-//                .load(url)
-//                .bitmapTransform(new RoundedCornersTransformation(context, corner, margin))
-//                .crossFade()
-//                .into(imageView);
-//    }
+    public void roundedCorners(Context context, String url, ImageView imageView, int corner,
+                               int margin) {
+        Glide.with(context)
+                .load(url)
+                .bitmapTransform(new RoundedCornersTransformation(context, corner, margin))
+                .crossFade()
+                .into(imageView);
+    }
 
     public void size(Context context, String url, ImageView imageView,
                      SizeReadyCallback sizeReadyCallback) {

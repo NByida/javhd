@@ -16,6 +16,6 @@ public interface DownLoadService {
 
     @Streaming
     @GET
-        public Observable<ResponseBody> downloadFilm(@Url String url);
+    Observable<ResponseBody> downloadFilm(@Url String url);
 
 }

@@ -45,6 +45,15 @@
 
     </style>
 
+    <style name="baseCardView" parent="android:Widget">
+        <item name="cardElevation">5dp</item>
+        <item name="cardCornerRadius">5dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
     <style name="DefaultCustomViewStyle"></style>
 
 </resources>

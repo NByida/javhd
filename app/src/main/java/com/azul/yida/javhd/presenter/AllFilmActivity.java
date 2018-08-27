@@ -36,7 +36,7 @@ public class AllFilmActivity extends BaseloadingRvActivity<AllFilmView> {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(model->{
-                    rootView.post(()->mvpView.dissmissLoading());
+                mvpView.dissmissLoading();
                     if(p==1) {mRefreshLayout.endRefreshing();}
                     else { mRefreshLayout.endLoadingMore();}
                     // Mlog.t(model.toString());

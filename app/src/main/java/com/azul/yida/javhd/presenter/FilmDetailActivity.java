@@ -67,6 +67,7 @@ public class FilmDetailActivity extends BasePresentActivity<FilmDetailView> {
 
             @Override
             public void onProgress(int progress) {
+
                 mvpView.setDownloadProgressBar(progress);
                // Mlog.t("开始下载"+progress);
             }
@@ -85,7 +86,7 @@ public class FilmDetailActivity extends BasePresentActivity<FilmDetailView> {
         rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .subscribe(granked -> {
                     if (granked) {
-                        downloadUtils.download(film.getRealurl(), Environment.getExternalStorageDirectory()+Contants.ROOT_DIR,film.getPid());
+                        downloadUtils.download(film.getRealurl(), Environment.getExternalStorageDirectory()+Contants.ROOT_DIR,film.getTitle());
                     }
                 });
     }
